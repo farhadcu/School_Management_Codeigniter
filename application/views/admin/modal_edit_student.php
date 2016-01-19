@@ -125,9 +125,27 @@
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label"><?php echo translate('photo'); ?></label>
+                    <label class="control-label"><?php echo translate('Student Photo'); ?></label>
                     <div class="controls" style="width:210px;">
                         <input type="file" class="" name="userfile" id="imgInp" />
+                    </div>
+                </div>
+		<div class="control-group">
+                    <label class="control-label"><?php echo translate('Student Father Photo'); ?></label>
+                    <div class="controls" style="width:210px;">
+                        <input type="file" class="" name="student_father" id="imgInp" />
+                    </div>
+                </div>
+		<div class="control-group">
+                    <label class="control-label"><?php echo translate('Student Mother Photo'); ?></label>
+                    <div class="controls" style="width:210px;">
+                        <input type="file" class="" name="student_mother" id="imgInp" />
+                    </div>
+                </div>
+		<div class="control-group">
+                    <label class="control-label"><?php echo translate('Student Guardian Photo'); ?></label>
+                    <div class="controls" style="width:210px;">
+                        <input type="file" class="" name="student_guardian" id="imgInp" />
                     </div>
                 </div>
                 <div class="control-group">
@@ -152,7 +170,8 @@
                     <label class="control-label"><?php echo translate('name'); ?></label>
                     <div class="controls">
                         <input type="text" class="" name="name" value="<?php echo $row['name']; ?>" placeholder="Enter Student Name"/>
-						<input type="text" class="" name="nick_name" value="<?php echo $row['nick_name']; ?>" placeholder="<?=$nick_name?>"/>
+						<input type="text" class="" name="nick_name" value="<?php echo $row['nick_name']; ?>" placeholder="<?='Nick Name'?>" />
+						<input type="text" class="" name="student_name_bangla" value="<?php echo $row['student_name_bangla']; ?>" placeholder="<?='Student Name Bangla'?>" />
                     </div>
                 </div>
 				<div class="control-group">
@@ -232,7 +251,8 @@
                     <label class="control-label"><?php echo translate('guardian_info'); ?></label>
                     <div class="controls">
                         <p>
-                            <input type="text" class="" name="guardian_name" value="<?php echo $row['guardian_name']; ?>" placeholder="Enter Name"/>
+                            <input type="text" class="" name="guardian_name" value="<?php echo $row['guardian_name']; ?>" placeholder="Guardian name"/>
+			    <input type="text" class="" name="guardian_name_bangla" value="<?php echo $row['guardian_name_bangla']; ?>" placeholder="Guardian name Bangla"/>
                             <input type="number" class="w100" name="guardian_age" value="<?php echo $row['guardian_age']; ?>" placeholder="Enter Age"/>                                        
                             <input type="text" class="" name="guardian_profession" value="<?php echo $row['guardian_profession']; ?>" placeholder="Enter Profeesion"/> 
 							<input type="text" class="" name="gardian_mobile" value="<?php echo $row['gardian_mobile']; ?>" placeholder="Enter Mobile Number"/>

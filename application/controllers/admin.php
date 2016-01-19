@@ -166,6 +166,7 @@ class Admin extends CI_Controller {
 
             $data['name'] = $this->input->post('name');
 			$data['nick_name'] = $this->input->post('nick_name');
+            $data['student_name_bangla'] = $this->input->post('student_name_bangla');
             $data['birthday'] = $this->input->post('birthday');
             $data['sex'] = $this->input->post('sex');
 			$data['maritial_status'] = $this->input->post('maritial_status');
@@ -197,6 +198,7 @@ class Admin extends CI_Controller {
 			$data['mother_birthday'] = $this->input->post('mother_birthday');
 			
             $data['guardian_name'] = $this->input->post('guardian_name');
+	    $data['guardian_name_bangla'] = $this->input->post('guardian_name_bangla');
             $data['guardian_profession'] = $this->input->post('guardian_profession');
             $data['guardian_age'] = $this->input->post('guardian_age');
             $data['guardian_income'] = $this->input->post('guardian_income');
@@ -277,6 +279,9 @@ class Admin extends CI_Controller {
             $this->db->update('student', $data);
 			$this->crud_model->clear_cache();
             move_uploaded_file($_FILES['userfile']['tmp_name'], 'uploads/student_image/' . $param3 . '.jpg');
+	    move_uploaded_file($_FILES['student_father']['tmp_name'], 'uploads/student_father_image/' . $param3 . '.jpg');
+	    move_uploaded_file($_FILES['student_mother']['tmp_name'], 'uploads/student_mother_image/' . $param3 . '.jpg');
+	    move_uploaded_file($_FILES['student_guardian']['tmp_name'], 'uploads/student_guardian_image/' . $param3 . '.jpg');
             redirect(site_url('modal/popup/edit_student/'.$param3));
         } else if ($param2 == 'edit') {
             $page_data['edit_data'] = $this->db->get_where('student', array(
@@ -314,7 +319,9 @@ class Admin extends CI_Controller {
             
             $data['name'] = $this->input->post('name');
 			$data['nick_name'] = $this->input->post('nick_name');
+	    $data['student_name_bangla'] = $this->input->post('student_name_bangla');
             $data['birthday'] = $this->input->post('birthday');
+	    $data['student_blood_group'] = $this->input->post('student_blood_group');
             $data['sex'] = $this->input->post('maritial_status');
 			$data['maritial_status'] = $this->input->post('sex');
             $data['present_address'] = $this->input->post('present_address');
@@ -326,6 +333,7 @@ class Admin extends CI_Controller {
             $data['password'] = $this->input->post('password');
 
             $data['father_name'] = $this->input->post('father_name');
+	    $data['father_name_bangla'] = $this->input->post('father_name_bangla');
             $data['father_age'] = $this->input->post('father_age');
             $data['father_education'] = $this->input->post('father_education');
             $data['father_occupation'] = $this->input->post('father_occupation');
@@ -333,8 +341,10 @@ class Admin extends CI_Controller {
 			$data['father_blood_group'] = $this->input->post('father_blood_group');
 			$data['father_nidnumber'] = $this->input->post('father_nidnumber');
 			$data['father_birthday'] = $this->input->post('father_birthday');
+	    $data['father_monthly_income'] = $this->input->post('father_monthly_income');
 			
             $data['mother_name'] = $this->input->post('mother_name');
+	    $data['mother_name_bangla'] = $this->input->post('mother_name_bangla');
             $data['mother_age'] = $this->input->post('mother_age');
             $data['mother_education'] = $this->input->post('mother_education');
             $data['mother_occupation'] = $this->input->post('mother_occupation');
@@ -342,8 +352,10 @@ class Admin extends CI_Controller {
 			$data['mother_blood_group'] = $this->input->post('mother_blood_group');
 			$data['mother_nidnumber'] = $this->input->post('mother_nidnumber');
 			$data['mother_birthday'] = $this->input->post('mother_birthday');
+	    $data['mother_monthly_income'] = $this->input->post('mother_monthly_income');
 			
             $data['guardian_name'] = $this->input->post('guardian_name');
+	    $data['guardian_name_bangla'] = $this->input->post('guardian_name_bangla');
             $data['guardian_profession'] = $this->input->post('guardian_profession');
             $data['guardian_age'] = $this->input->post('guardian_age');
             $data['guardian_income'] = $this->input->post('guardian_income');
@@ -411,12 +423,16 @@ class Admin extends CI_Controller {
             $data['group_others'] = $this->input->post('group_others');
             $data['others_section'] = $this->input->post('others_section');
             $data['others_roll'] = $this->input->post('others_roll');
+	    $data['others_id'] = $this->input->post('others_id');
             $this->db->insert('student', $data);
 			$this->db->last_query();
             $student_id = mysql_insert_id();
             move_uploaded_file($_FILES['userfile']['tmp_name'], 'uploads/student_image/' . $student_id . '.jpg');
+	    move_uploaded_file($_FILES['student_father']['tmp_name'], 'uploads/student_father_image/' . $student_id . '.jpg');
+	    move_uploaded_file($_FILES['student_mother']['tmp_name'], 'uploads/student_mother_image/' . $student_id . '.jpg');
+	    move_uploaded_file($_FILES['student_guardian']['tmp_name'], 'uploads/student_guardian_image/' . $student_id . '.jpg');
             $this->email_model->account_opening_email('student', $data['email']); //SEND EMAIL ACCOUNT OPENING EMAIL
-            redirect(base_url() . 'index.php?admin/student_add/', 'refresh');
+            redirect(base_url() . 'index.php?admin/sif_form/', 'refresh');
 		   return;
         }
 

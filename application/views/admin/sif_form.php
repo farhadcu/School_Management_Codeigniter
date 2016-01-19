@@ -37,12 +37,36 @@
                                     </div>
 								</div>
 								<div class="control-group">
-									<label class="control-label"><?php echo translate('photo'); ?></label>
+									<label class="control-label"><?php echo translate('Student Photo'); ?></label>
                                     <div class="controls" style="width:210px;">
 										<img  src="" id="blah" align="photo" style="display:none"/>
                                         <input type="file" class="" name="userfile" id="imgInp" />
                                     </div>
                                 </div>
+								<div class="control-group">
+									<label class="control-label"><?php echo translate('Student Father Photo'); ?></label>
+                                    <div class="controls" style="width:210px;">
+										<img  src="" id="blah" align="photo" style="display:none"/>
+                                        <input type="file" class="" name="student_father" id="imgInp" />
+                                    </div>
+                                </div>
+								
+								<div class="control-group">
+									<label class="control-label"><?php echo translate('Student Mother Photo'); ?></label>
+                                    <div class="controls" style="width:210px;">
+										<img  src="" id="blah" align="photo" style="display:none"/>
+                                        <input type="file" class="" name="student_mother" id="imgInp" />
+                                    </div>
+                                </div>
+								
+								<div class="control-group">
+									<label class="control-label"><?php echo translate('Student Guardian Photo'); ?></label>
+                                    <div class="controls" style="width:210px;">
+										<img  src="" id="blah" align="photo" style="display:none"/>
+                                        <input type="file" class="" name="student_guardian" id="imgInp" />
+                                    </div>
+                                </div>
+								
 								<div class="control-group">
                                     <label class="control-label"><?php echo translate('student_name(_english_)'); ?></label>
                                     <div class="controls">
@@ -52,7 +76,7 @@
 								<div class="control-group">
                                     <label class="control-label"><?php echo translate('student_name(_bangla_)'); ?></label>
                                     <div class="controls">
-                                        <input type="text" class="validate[required]" name="name" placeholder="Enter Name"/>
+                                        <input type="text" class="validate[required]" name="student_name_bangla" placeholder="Enter Name"/>
                                     </div>
                                 </div>
 								<div class="control-group">
@@ -70,6 +94,23 @@
                                         </select>
                                     </div>
                                 </div>
+								<div class="control-group">
+                                    <label class="control-label"><?php echo translate('Student Blood Group'); ?></label>
+                                    <div class="controls">
+                                        <select name="student_blood_group" class="uniform" style="width:100%;">
+											<option value="">Select Blood Group</option>
+                                            <option value="O-"><?php echo translate('O-');?></option>
+                                            <option value="O+"><?php echo translate('O+');?></option>
+                                            <option value="A-"><?php echo translate('A-');?></option>
+                                            <option value="A+"><?php echo translate('A+');?></option>
+                                            <option value="B-"><?php echo translate('B-');?></option>
+                                            <option value="B+"><?php echo translate('B+');?></option>
+                                            <option value="AB-"><?php echo translate('AB-');?></option>
+                                            <option value="AB+"><?php echo translate('AB+');?></option>
+										</select>
+                                    </div>
+                                </div>
+								
 								<div class="control-group">
                                     <label class="control-label"><?php echo translate('maritial_status'); ?></label>
                                     <div class="controls">
@@ -128,7 +169,7 @@
                                             <option value="AB+"><?php echo translate('AB+');?></option>
 										</select>
                                     <input type="text" class="w300" name="father_nidnumber" placeholder="Enter national id number"/>
-									<input type="text" class="w300" name="monthly_income" placeholder="<?=translate('monthly_income')?>"/>
+									<input type="text" class="w300" name="father_monthly_income" placeholder="<?=translate('monthly_income')?>"/>
                                     </div>
                                     
                                     </div>
@@ -138,7 +179,7 @@
                                     <div class="controls">
                                     <div class="uk-panel uk-margin-top">
                                         <input type="text" class="w300" name="mother_name" placeholder="Mother Name(English)"/>
-										<input type="text" class="w300" name="mother_name" placeholder="Mother Name(Bangla)"/>
+										<input type="text" class="w300" name="mother_name_bangla" placeholder="Mother Name(Bangla)"/>
 									</div>
 									<div class="uk-panel uk-margin-top">
                                         <input type="number" class="w100" name="mother_age" placeholder="Age"/>
@@ -165,7 +206,7 @@
                                             <option value="AB+"><?php echo translate('AB+');?></option>
 										</select>
                                         <input type="text" class="w300" name="mother_nidnumber" placeholder="Enter national id number"/>
-										<input type="text" class="w300" name="monthly_income" placeholder="<?=translate('monthly_income')?>"/>
+										<input type="text" class="w300" name="mother_monthly_income" placeholder="<?=translate('monthly_income')?>"/>
                                     </div>
                                     </div>  
                                 </div>
@@ -181,42 +222,7 @@
                                         <textarea rows="4" cols="55" class="" name="permanent_address" placeholder="Enter village, post office, upozilla, district name."></textarea>
                                     </div>
                                 </div>
-                                <div class="control-group custom-block">
-                                    <label class="control-label"><?php echo translate('formal_guardian_info'); ?></label>
-                                    <div class="controls">
-                                        <p>
-                                            <input type="text" class="w300" name="guardian_name" placeholder="guardian name(English)"/>
-											<input type="text" class="w300" name="guardian_name"  placeholder="guardian name(Bangla)"/>
-                                            <input type="number" class="w100" name="guardian_age" placeholder="Age"/>                                        
-                                            <input type="text" class="" name="guardian_profession" placeholder="Enter occupation"/> 
-                                        </p>                                        
-                                        <p>
-                                            <input type="text" class="w300" name="guardian_income" placeholder="Enter anual income (TK)"/>
-                                            <input type="text" class="w300" name="guardian_land" placeholder="Enter the amount of land"/>
-                                        </p>
-										<p>
-											<input type="text" class="w300" name="guardian_nid" placeholder="Enter NID"/>
-											<input type="text" class="datepicker fill-up" name="guardian_birthday" placeholder="Enter birthday"/>
-										</p>
-										<p>
-										<input type="number" class="w300" name="gardian_mobile" placeholder="Enter mobile number"/>
-										<select name="gardian_blood_group" class="uniform" style="width:100%;">
-											<option value="">Select Blood Group</option>
-                                            <option value="O-"><?php echo translate('O-');?></option>
-                                            <option value="O+"><?php echo translate('O+');?></option>
-                                            <option value="A-"><?php echo translate('A-');?></option>
-                                            <option value="A+"><?php echo translate('A+');?></option>
-                                            <option value="B-"><?php echo translate('B-');?></option>
-                                            <option value="B+"><?php echo translate('B+');?></option>
-                                            <option value="AB-"><?php echo translate('AB-');?></option>
-                                            <option value="AB+"><?php echo translate('AB+');?></option>
-										</select>
-										</p>
-                                        <p style="margin: 0;">
-                                            <textarea rows="4" cols="55" class="" name="guardian_address" placeholder="Enter village, post office, upozilla, district name."></textarea>
-                                        </p>
-                                    </div>
-                                </div>   
+                                   
 										 <div class="control-group custom-block">
                                     <label class="control-label"><?php echo translate('local_guardian_info'); ?></label>
                                     <div class="controls">
@@ -253,6 +259,44 @@
                                         </p>
                                     </div>
                                 </div>   
+								
+				<div class="control-group custom-block">
+                                    <label class="control-label"><?php echo translate('formal_guardian_info'); ?></label>
+                                    <div class="controls">
+                                        <p>
+                                            <input type="text" class="w300" name="guardian_name" placeholder="guardian name(English)"/>
+											<input type="text" class="w300" name="guardian_name_bangla"  placeholder="guardian name(Bangla)"/>
+                                            <input type="number" class="w100" name="guardian_age" placeholder="Age"/>                                        
+                                            <input type="text" class="" name="guardian_profession" placeholder="Enter occupation"/> 
+                                        </p>                                        
+                                        <p>
+                                            <input type="text" class="w300" name="guardian_income" placeholder="Enter anual income (TK)"/>
+                                            <input type="text" class="w300" name="guardian_land" placeholder="Enter the amount of land"/>
+                                        </p>
+										<p>
+											<input type="text" class="w300" name="guardian_nid" placeholder="Enter NID"/>
+											<input type="text" class="datepicker fill-up" name="guardian_birthday" placeholder="Enter birthday"/>
+										</p>
+										<p>
+										<input type="number" class="w300" name="gardian_mobile" placeholder="Enter mobile number"/>
+										<select name="gardian_blood_group" class="uniform" style="width:100%;">
+											<option value="">Select Blood Group</option>
+                                            <option value="O-"><?php echo translate('O-');?></option>
+                                            <option value="O+"><?php echo translate('O+');?></option>
+                                            <option value="A-"><?php echo translate('A-');?></option>
+                                            <option value="A+"><?php echo translate('A+');?></option>
+                                            <option value="B-"><?php echo translate('B-');?></option>
+                                            <option value="B+"><?php echo translate('B+');?></option>
+                                            <option value="AB-"><?php echo translate('AB-');?></option>
+                                            <option value="AB+"><?php echo translate('AB+');?></option>
+										</select>
+										</p>
+                                        <p style="margin: 0;">
+                                            <textarea rows="4" cols="55" class="" name="guardian_address" placeholder="Enter village, post office, upozilla, district name."></textarea>
+                                        </p>
+                                    </div>
+                                </div>				
+								
                                 <div class="control-group">
                                     <label class="control-label"><?php echo translate('phone'); ?></label>
                                     <div class="controls">

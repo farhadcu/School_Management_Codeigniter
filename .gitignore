@@ -1,3 +1,5 @@
+nbproject
+
 /uploads/excel_sheet/*
 !/uploads/excel_sheet/.gitkeep
 
@@ -19,3 +21,12 @@
 
 /uploads/teacher_image/*
 !/uploads/teacher_image/.gitkeep
+
+/uploads/student_father_image/*
+!/uploads/student_father_image/.gitkeep
+
+/uploads/student_mother_image/*
+!/uploads/student_mother_image/.gitkeep
+
+/uploads/student_guardian_image/*
+!/uploads/student_guardian_image/.gitkeep

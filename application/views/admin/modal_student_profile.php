@@ -55,6 +55,7 @@ foreach ($student_info as $row):
                      <h3>
 					 	<?php echo $row['name']; ?>
 						<?php if($row['nick_name']) echo "(".$row['nick_name'].")"; ?>
+			 <?php if ($row['student_name_bangla']) echo '<br />'.$row['student_name_bangla']; ?>
 					</h3>
                      <h5>Student Id Number: <?php echo $row['student_unique_ID']; ?></h5>
                      <h5>Class: <?php echo $this->crud_model->get_class_name($row['class_id']); ?></h5>
@@ -148,13 +149,13 @@ foreach ($student_info as $row):
                 <?php if ($row['sex'] != ''): ?>
                     <tr>
                         <td><b>Sex</b></td>
-                        <td>: <?php echo $row['sex']; ?></td>
+                        <td>: <?php echo $row['maritial_status']; ?></td>
                     </tr>
                 <?php endif; ?>
                 <?php if ($row['maritial_status'] != ''): ?>
                     <tr>
                         <td><b>Maritial Status</b></td>
-                        <td>: <?php echo $row['maritial_status']; ?></td>
+                        <td>: <?php echo $row['sex']; ?></td>
                     </tr>
                 <?php endif; ?>
 				<?php if ($row['phone'] != ''): ?>
@@ -166,7 +167,7 @@ foreach ($student_info as $row):
                
                 <tr>
                     <td><b>Blood Group</b></td>
-                    <td>: <?php echo $row['blood_group']; ?>O+</td>
+                    <td>: <?php echo $row['student_blood_group']; ?></td>
                 </tr>  
                 
                 <?php if ($row['religion']): ?>
@@ -191,8 +192,11 @@ foreach ($student_info as $row):
                 <?php endif; ?>
                 
                 <tr>
-                    <td><b>Father Info</b></td>
+                    <td><b>Father Info</b></td> 
                     <td>  
+			<div style="float: left;">
+			    <img src="<?php echo $this->crud_model->get_image_url('student_father', $row['student_id']); ?>" height="80" width="80" /> &nbsp;&nbsp;&nbsp;
+			</div>
 					<?php if ($row['father_name'] != ''): ?>
 						<span><b>Name: </b><?php echo $row['father_name']; ?>,</span>
 					<?php endif; ?>
@@ -219,13 +223,16 @@ foreach ($student_info as $row):
                     
                      <?php if ($row['father_nidnumber'] != ''): ?>
 						<span><b>National Id card No:</b> <?php echo $row['father_nidnumber']; ?>,</span>
-					 <?php endif; ?>                    
+					 <?php endif; ?>    
                     </td>
                 </tr>
                     
                 <tr>
                     <td><b>Mother Info</b></td>
                     <td>  
+			<div style="float: left;">
+			    <img src="<?php echo $this->crud_model->get_image_url('student_mother', $row['student_id']); ?>" height="80" width="80" /> &nbsp;&nbsp;&nbsp;
+			</div>
 					<?php if ($row['mother_name'] != ''): ?>
 						<span><b>Name: </b><?php echo $row['mother_name']; ?>,</span>
 					<?php endif; ?>
@@ -275,6 +282,9 @@ foreach ($student_info as $row):
                  <tr>
                     <td><b>Guardian Info</b></td>
                     <td>  
+			<div style="float: left;">
+			    <img src="<?php echo $this->crud_model->get_image_url('student_guardian', $row['student_id']); ?>" height="80" width="80" /> &nbsp;&nbsp;&nbsp;
+			</div>
 					 <?php if ($row['guardian_name'] != ''): ?>
 						<span><b>Name: </b><?php echo $row['guardian_name']; ?>,</span>
 					 <?php endif; ?>
