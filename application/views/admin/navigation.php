@@ -53,6 +53,11 @@
                             <i class="uk-icon-user-secret"></i> <?php echo translate('student_control'); ?>
                         </a>
                     </li>
+                    <li>
+						<a href="<?=site_url('admin/id_card_proof_select')?>" target="frame">
+							<i class="uk-icon-info-circle"></i> <?php echo translate('ID card proof'); ?>
+						</a>
+					</li>
 				</ul>
 			</li>
 

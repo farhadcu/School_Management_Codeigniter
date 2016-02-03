@@ -51,7 +51,7 @@ $active_record = TRUE;
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
 $db['default']['password'] = '';
-$db['default']['database'] = 'school_main';
+$db['default']['database'] = 'school_main_2';
 
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';

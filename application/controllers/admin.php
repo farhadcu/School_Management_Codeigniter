@@ -3916,4 +3916,18 @@ function testimonial(){
 			$page_data['crud']=$output;
 	        $this->load->view('index', $page_data);
 		}
+                
+                public function id_card_proof_select() {
+                    $page_data['page_name'] = 'id_card_proof_select';
+                    $page_data['page_title'] = translate('ID Card Proof');
+                    $this->load->view('index', $page_data);
+                }
+                
+                public function id_card_proof_list() {
+                    $page_data['page_name'] = 'id_card_proof_select';
+                    $page_data['page_title'] = translate('ID Card Proof');
+                    $page_data['class_id'] = $this->uri->segment(3);
+                    $this->load->view('index', $page_data);
+                }
+                
 }
