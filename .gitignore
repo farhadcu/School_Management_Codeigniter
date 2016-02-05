@@ -1,5 +1,8 @@
 nbproject
 
+/excel_file/*
+!/excel_file/.gitkeep
+
 /uploads/excel_sheet/*
 !/uploads/excel_sheet/.gitkeep
 

@@ -46,10 +46,23 @@
 							?>
                         });
                     </script>
-
+                  
+		    <div style="text-align: center; font-size: 14px;">
+			<?php
+			if (isset($message_excel_uploader) && ($message_excel_uploader != "")) {
+			    echo $message_excel_uploader;
+			}
+			?>
+			<?php
+			if (isset($file_upload_error)) {
+			    echo $file_upload_error;
+			}
+			?>
+		    </div>
+		    
                 <div class="pull-left student-info-upload">  
-					<center>				
-						<div class="tab-pane  active" id="list">
+					<center>
+<!--						<div class="tab-pane  active" id="list">
 							
 								
 									   <select name="class_id" onchange="setclassvalue()" id="class_id">
@@ -65,14 +78,15 @@
 									endforeach;
 									?>
 								</select>
-						</div>
-						<div><a href="#" id="send_btn" type="submit" class="btn btn-gray"><?php echo translate('download sample_excel'); ?></a></div>
+						</div>-->
+						<div><a href="<?php echo base_url('template/sample_excel/sample_student_information.xlsx'); ?>" id="send_btn" type="submit" class="btn btn-gray"><?php echo translate('download sample_excel'); ?></a></div>
 					</center>
                 </div>
 				
 				<div class="pull-left student-info-upload">
 					<center>
-					<?php echo form_open('admin/student_info_sheet/upload_excel', array('class' => 'form-horizontal validatable', 'enctype' => 'multipart/form-data')); ?>
+					<?php // echo form_open('admin/student_info_sheet/upload_excel', array('class' => 'form-horizontal validatable', 'enctype' => 'multipart/form-data')); ?>
+					    <?php echo form_open('excel_uploader/upload_form_submit', array('class' => 'form-horizontal validatable', 'enctype' => 'multipart/form-data')); ?>
                          <input type="hidden" name="Stclassid" id="Stclassid" value="">
                          <div>
 						 	<select name="class_id" class="form-control" required="">
@@ -89,7 +103,8 @@
 								?>
 							</select>
                             <span>
-                                Browse <input type="file" class="" name="xlfile" id="xlfile" />
+                                <!--Browse <input type="file" class="" name="xlfile" id="xlfile" />-->
+				Browse <input type="file" class="" name="user_file" id="user_file" />
                             </span>
                          </div>
 						</br>
