@@ -45,7 +45,7 @@
 							}
 							?>
                         });
-                    </script>
+                </script>
                   
 		    <div style="text-align: center; font-size: 14px;">
 			<?php

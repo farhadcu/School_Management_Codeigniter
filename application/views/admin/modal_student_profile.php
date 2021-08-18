@@ -149,13 +149,13 @@ foreach ($student_info as $row):
                 <?php if ($row['sex'] != ''): ?>
                     <tr>
                         <td><b>Sex</b></td>
-                        <td>: <?php echo $row['maritial_status']; ?></td>
+                        <td>: <?php echo $row['sex']; ?></td>
                     </tr>
                 <?php endif; ?>
                 <?php if ($row['maritial_status'] != ''): ?>
                     <tr>
                         <td><b>Maritial Status</b></td>
-                        <td>: <?php echo $row['sex']; ?></td>
+                        <td>: <?php echo $row['maritial_status']; ?></td>
                     </tr>
                 <?php endif; ?>
 				<?php if ($row['phone'] != ''): ?>

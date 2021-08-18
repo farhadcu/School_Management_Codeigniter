@@ -40,7 +40,6 @@
                             </div>
                             <script>
                                 $(document).ready(function() {
-                                                                                                                                                        						  	
                                     function shake()
                                     {
                                         $( "#ask_class" ).effect( "shake" );
@@ -145,7 +144,7 @@
         <div class="span5" style="float:none !important;">
             <div class="box box-border">
                 <div class="box-header">
-                    <span class="title"> <i class="icon-info-sign"></i> Please select a class to manage student.</span>
+                    <span class="title"><i class="icon-info-sign"></i> Please select a class to manage student.</span>
                 </div>
                 <div class="box-content padded">
                     <br />
@@ -157,7 +156,8 @@
                             ?>
                             <option value="<?php echo $row['class_id']; ?>"
                                     <?php if ($class_id == $row['class_id']) echo 'selected'; ?>>
-                                Class <?php echo $row['name']; ?></option>
+                                Class <?php echo $row['name']; ?>
+							</option>
                             <?php
                         endforeach;
                         ?>

@@ -169,7 +169,8 @@ class Admin extends CI_Controller {
             $data['student_name_bangla'] = $this->input->post('student_name_bangla');
             $data['birthday'] = $this->input->post('birthday');
             $data['sex'] = $this->input->post('sex');
-			$data['maritial_status'] = $this->input->post('maritial_status');
+	    $data['maritial_status'] = $this->input->post('maritial_status');
+	    $data['student_blood_group'] = $this->input->post('student_blood_group');
             $data['present_address'] = $this->input->post('present_address');
             $data['permanent_address'] = $this->input->post('permanent_address');
             $data['phone'] = $this->input->post('phone');
@@ -322,8 +323,8 @@ class Admin extends CI_Controller {
 	    $data['student_name_bangla'] = $this->input->post('student_name_bangla');
             $data['birthday'] = $this->input->post('birthday');
 	    $data['student_blood_group'] = $this->input->post('student_blood_group');
-            $data['sex'] = $this->input->post('maritial_status');
-			$data['maritial_status'] = $this->input->post('sex');
+            $data['maritial_status'] = $this->input->post('maritial_status');
+			$data['sex'] = $this->input->post('sex');
             $data['present_address'] = $this->input->post('present_address');
             $data['permanent_address'] = $this->input->post('permanent_address');
             $data['phone'] = $this->input->post('phone');
@@ -466,7 +467,7 @@ class Admin extends CI_Controller {
 		}
 		$output=$this->gc
 		->set_table('student')
-		->columns('name','sex','class_id','roll','section','group','passing_year','status')
+		->columns('Student_id','name','sex','class_id','roll','section','group','pass_year','status')
 		->edit_fields('name','status')
 		->callback_column('sex',function($value,$row)
 		{

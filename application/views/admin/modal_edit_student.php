@@ -183,6 +183,27 @@
                         </select>
                     </div>
                 </div>
+		
+		<div class="control-group">
+                    <label class="control-label"><?php echo translate('student_blood_group'); ?></label>
+		    <?php
+							$student_blood_group=$row['student_blood_group'];
+						?>
+                    <div class="controls">
+                      <select name="student_blood_group" class="uniform" style="width:100%;">
+								<option value="">Select Blood Group</option>
+                                <option value="O-" <?php if($student_blood_group=='O-') echo " selected"; ?> ><?php echo translate('O-');?></option>
+                                <option value="O+" <?php if($student_blood_group=='O+') echo " selected"; ?> ><?php echo translate('O+');?></option>
+                                <option value="A-" <?php if($student_blood_group=='A-') echo " selected"; ?> ><?php echo translate('A-');?></option>
+                                <option value="A+" <?php if($student_blood_group=='A+') echo " selected"; ?> ><?php echo translate('A+');?></option>
+                                <option value="B-" <?php if($student_blood_group=='B-') echo " selected"; ?> ><?php echo translate('B-');?></option>
+                                <option value="B+" <?php if($student_blood_group=='B+') echo " selected"; ?> ><?php echo translate('B+');?></option>
+                                <option value="AB-" <?php if($student_blood_group=='AB-') echo " selected"; ?> ><?php echo translate('AB-');?></option>
+                                <option value="AB+" <?php if($student_blood_group=='AB+') echo " selected"; ?> ><?php echo translate('AB+');?></option>
+							</select>  
+                    </div>
+                </div>
+		
                 <div class="control-group custom-block">
                     <label class="control-label"><?php echo translate('father_info'); ?></label>
                     <div class="controls">

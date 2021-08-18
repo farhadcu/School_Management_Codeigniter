@@ -109,9 +109,9 @@ class Excel_uploader extends CI_Controller {
         $last_excel_file_id_2 = (int) $last_excel_file_id;
         $last_excel_file_id_3 = $last_excel_file_id_2 + 1;
         $config['upload_path'] = './excel_file/';
-        $config['allowed_types'] = 'xls|xlsx|csv';
+        $config['allowed_types'] = 'xls|xlsx|csv|doc';
         $config['file_name'] = "$last_excel_file_id_3" . '_' . $_FILES['user_file']['name'];
-	$this->upload->initialize($config);
+		$this->upload->initialize($config);
 //        $this->load->library('upload', $config);
         if ($this->upload->do_upload($field_name)) {
             $file_name = $this->upload->data()['file_name'];
@@ -193,11 +193,9 @@ class Excel_uploader extends CI_Controller {
 		    'name' => $data[$worksheet][$row][1],
 		    'student_name_bangla' => $data[$worksheet][$row][2],
 		    'birthday' => $data[$worksheet][$row][3],
-//		    'sex' => $data[$worksheet][$row][4],
-		    'maritial_status' => $data[$worksheet][$row][4],
+		    'sex' => $data[$worksheet][$row][4],
 		    'student_blood_group' => $data[$worksheet][$row][5],
-//		    'maritial_status' => $data[$worksheet][$row][6],
-		    'sex' => $data[$worksheet][$row][6],
+		    'maritial_status' => $data[$worksheet][$row][6],
 //		    'religion' => $data[$worksheet][$row][7],
 		    'religion' => $religion,
 		    'nationality' => $data[$worksheet][$row][8],
@@ -263,8 +261,10 @@ class Excel_uploader extends CI_Controller {
                 );
             }
         }
-//	var_dump($student_array);	exit();
+      // echo '<pre>';	var_dump($student_array[0]); echo '</pre>';	exit();
         $this->db->insert_batch('student', $student_array);
+	//	var_dump($resulttt); 
+	//echo '<br />'.$this->db->last_query(); exit();
 //        echo 'Student Information Inserted'; exit(); 
         $message_excel_uploader = 'Student information inserted successfully. <br />';
         $message_excel_uploader .= $this->whole_workbook_row_count($data, $worksheet_array, $worksheet_dimension);
